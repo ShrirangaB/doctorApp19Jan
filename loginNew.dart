@@ -1,3 +1,4 @@
+import 'package:Doctors_App/homePage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 
@@ -17,13 +18,13 @@ class _LoginNewState extends State<LoginNew> {
           ClipPath(
             clipper: WaveClipperTwo(flip: false),
             child: Container(
-              child: Image.network(
-                "https://i.pinimg.com/originals/61/c7/a2/61c7a28bbb12ee7d75064e9dba23305e.png",
-                height: 290,
-                width: 380,
-              ),
-              height: 250,
-              color: Colors.white,
+              // child: Image.network(
+              //   "https://i.pinimg.com/originals/61/c7/a2/61c7a28bbb12ee7d75064e9dba23305e.png",
+              //   height: 290,
+              //   width: 380,
+              // ),
+              height: 200,
+              color: Colors.orange[900],
             ),
           ),
           Text(
@@ -60,7 +61,14 @@ class _LoginNewState extends State<LoginNew> {
             child: new Text(
               "Login",
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => HomePageDoctor(),
+                ),
+              );
+            },
           ),
           FlatButton(
             onPressed: () {},
@@ -100,15 +108,18 @@ class _LoginNewState extends State<LoginNew> {
             backgroundColor: Colors.orange[900],
             onPressed: () {},
           ),
+          SizedBox(
+            height: 150,
+          ),
           Positioned(
-            bottom: 0.0,
+            bottom: 0,
             child: ClipPath(
               clipper: WaveClipperTwo(flip: false, reverse: true),
               child: Container(
                 alignment: Alignment.bottomCenter,
-                height: 100,
+                height: 80,
                 width: MediaQuery.of(context).size.width,
-                color: Colors.deepOrange[600],
+                color: Colors.deepOrange[100],
               ),
             ),
           ),
