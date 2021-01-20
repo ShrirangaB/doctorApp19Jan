@@ -38,172 +38,174 @@ class _HomePageDoctorState extends State<HomePageDoctor> {
                 ),
               ),
             ),
-            Container(
-              child: Column(
-                children: [
-                  Row(
-                    children: [
-                      Card(
-                        child: Container(
-                          child: Column(
-                            children: [
-                              ListTile(
-                                leading: Icon(
-                                  Icons.account_circle,
-                                  color: Colors.white,
-                                  size: 40,
-                                ),
-                              ),
-                              ListTile(
-                                title: Text(
-                                  "Find Doctor",
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
+            Center(
+              child: Container(
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        Card(
+                          child: Container(
+                            child: Column(
+                              children: [
+                                ListTile(
+                                  leading: Icon(
+                                    Icons.account_circle,
                                     color: Colors.white,
+                                    size: 40,
                                   ),
                                 ),
-                                onTap: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => GetStarted(),
+                                ListTile(
+                                  title: Text(
+                                    "Find Doctor",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white,
                                     ),
-                                  );
-                                },
-                                subtitle: Text(
-                                  "210 Doctors",
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white60,
                                   ),
-                                ),
-                                contentPadding:
-                                    const EdgeInsets.only(top: 20, left: 15),
-                              )
-                            ],
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => GetStarted(),
+                                      ),
+                                    );
+                                  },
+                                  subtitle: Text(
+                                    "210 Doctors",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white60,
+                                    ),
+                                  ),
+                                  contentPadding:
+                                      const EdgeInsets.only(top: 20, left: 15),
+                                )
+                              ],
+                            ),
+                            width: 150,
+                            height: 150,
                           ),
-                          width: 150,
-                          height: 150,
+                          color: Colors.cyan[400],
                         ),
-                        color: Colors.cyan[400],
-                      ),
-                      Card(
-                        child: Container(
-                          child: Column(
-                            children: [
-                              ListTile(
-                                leading: Icon(
-                                  Icons.account_balance,
-                                  color: Colors.white,
-                                  size: 40,
-                                ),
-                              ),
-                              ListTile(
-                                title: Text(
-                                  "Find Hospital",
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
+                        Card(
+                          child: Container(
+                            child: Column(
+                              children: [
+                                ListTile(
+                                  leading: Icon(
+                                    Icons.account_balance,
                                     color: Colors.white,
+                                    size: 40,
                                   ),
                                 ),
-                                subtitle: Text(
-                                  "30 Hospital",
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white60,
+                                ListTile(
+                                  title: Text(
+                                    "Find Hospital",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white,
+                                    ),
                                   ),
-                                ),
-                                contentPadding:
-                                    const EdgeInsets.only(top: 20, left: 15),
-                              )
-                            ],
+                                  subtitle: Text(
+                                    "30 Hospital",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white60,
+                                    ),
+                                  ),
+                                  contentPadding:
+                                      const EdgeInsets.only(top: 20, left: 15),
+                                )
+                              ],
+                            ),
+                            width: 150,
+                            height: 150,
                           ),
-                          width: 150,
-                          height: 150,
+                          color: Colors.black54,
                         ),
-                        color: Colors.black54,
-                      ),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Card(
-                        child: Container(
-                          child: Column(
-                            children: [
-                              ListTile(
-                                leading: Icon(
-                                  Icons.add_to_photos,
-                                  color: Colors.white,
-                                  size: 40,
-                                ),
-                              ),
-                              ListTile(
-                                title: Text(
-                                  "Appointment",
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Card(
+                          child: Container(
+                            child: Column(
+                              children: [
+                                ListTile(
+                                  leading: Icon(
+                                    Icons.add_to_photos,
                                     color: Colors.white,
+                                    size: 40,
                                   ),
                                 ),
-                                subtitle: Text(
-                                  "59 Available",
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white60,
+                                ListTile(
+                                  title: Text(
+                                    "Appointment",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white,
+                                    ),
                                   ),
-                                ),
-                                contentPadding:
-                                    const EdgeInsets.only(top: 20, left: 15),
-                              )
-                            ],
+                                  subtitle: Text(
+                                    "59 Available",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white60,
+                                    ),
+                                  ),
+                                  contentPadding:
+                                      const EdgeInsets.only(top: 20, left: 15),
+                                )
+                              ],
+                            ),
+                            width: 150,
+                            height: 150,
                           ),
-                          width: 150,
-                          height: 150,
+                          color: Colors.black54,
                         ),
-                        color: Colors.black54,
-                      ),
-                      Card(
-                        child: Container(
-                          child: Column(
-                            children: [
-                              ListTile(
-                                leading: Icon(
-                                  Icons.calendar_today,
-                                  color: Colors.white,
-                                  size: 40,
-                                ),
-                              ),
-                              ListTile(
-                                title: Text(
-                                  "DrugList",
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
+                        Card(
+                          child: Container(
+                            child: Column(
+                              children: [
+                                ListTile(
+                                  leading: Icon(
+                                    Icons.calendar_today,
                                     color: Colors.white,
+                                    size: 40,
                                   ),
                                 ),
-                                subtitle: Text(
-                                  "22 Services",
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white60,
+                                ListTile(
+                                  title: Text(
+                                    "DrugList",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white,
+                                    ),
                                   ),
-                                ),
-                                contentPadding:
-                                    const EdgeInsets.only(top: 20, left: 15),
-                              )
-                            ],
+                                  subtitle: Text(
+                                    "22 Services",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white60,
+                                    ),
+                                  ),
+                                  contentPadding:
+                                      const EdgeInsets.only(top: 20, left: 15),
+                                )
+                              ],
+                            ),
+                            width: 150,
+                            height: 150,
                           ),
-                          width: 150,
-                          height: 150,
+                          color: Colors.black54,
                         ),
-                        color: Colors.black54,
-                      ),
-                    ],
-                  ),
-                ],
+                      ],
+                    ),
+                  ],
+                ),
+                padding: const EdgeInsets.all(27),
               ),
-              padding: const EdgeInsets.all(27),
             ),
           ],
         ),

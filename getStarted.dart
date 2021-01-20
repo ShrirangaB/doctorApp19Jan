@@ -1,3 +1,4 @@
+import 'package:Doctors_App/secondpage.dart';
 import 'package:flutter/material.dart';
 
 import 'homePage.dart';
@@ -20,7 +21,7 @@ class GetStarted extends StatelessWidget {
               ),
             ),
             Positioned(
-              top: MediaQuery.of(context).size.height / 5,
+              top: MediaQuery.of(context).size.height / 4,
               child: Padding(
                 padding: EdgeInsets.symmetric(
                   horizontal: MediaQuery.of(context).size.width / 10,
@@ -40,7 +41,7 @@ class GetStarted extends StatelessWidget {
                       height: 20,
                     ),
                     Text(
-                      'kjjfksdj fwioir weori ksdjfk sdfjp oskdf\nrifaf hdfsd',
+                      'adfdf jhb[ertr l;fd p[la\n[psdf sf asfa',
                       style: TextStyle(
                         fontSize: 16,
                         color: Colors.black45,
@@ -54,7 +55,7 @@ class GetStarted extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => HomePageDoctor(),
+                            builder: (context) => SecondScreen(),
                           ),
                         );
                       },
@@ -77,6 +78,14 @@ class GetStarted extends StatelessWidget {
                 ),
               ),
             ),
+            // Align(
+            //   alignment: Alignment.bottomLeft,
+            //   child: Image.asset(
+            //     'assets/images/doctor.png',
+            //     width: MediaQuery.of(context).size.width,
+            //     fit: BoxFit.fitWidth,
+            //   ),
+            // ),
           ],
         ),
       ),
