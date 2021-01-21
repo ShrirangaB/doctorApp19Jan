@@ -1,6 +1,9 @@
+import 'package:Doctors_App/loginNew.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'getStarted.dart';
+import 'main.dart';
 
 class HomePageDoctor extends StatefulWidget {
   @override
@@ -8,6 +11,23 @@ class HomePageDoctor extends StatefulWidget {
 }
 
 class _HomePageDoctorState extends State<HomePageDoctor> {
+  SharedPreferences logindata;
+  String username;
+  //String password;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    initial();
+  }
+
+  void initial() async {
+    logindata = await SharedPreferences.getInstance();
+    setState(() {
+      username = logindata.getString('username');
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -206,6 +226,23 @@ class _HomePageDoctorState extends State<HomePageDoctor> {
                 ),
                 padding: const EdgeInsets.all(27),
               ),
+            ),
+            MaterialButton(
+              minWidth: 350,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                  side: BorderSide(color: Colors.black54)),
+              textColor: Colors.white,
+              color: Colors.black54,
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                "Logout",
+              ),
+              onPressed: () {
+                logindata.setBool('login', true);
+                Navigator.pushReplacement(context,
+                    MaterialPageRoute(builder: (context) => LoginNew()));
+              },
             ),
           ],
         ),

@@ -1,6 +1,7 @@
 import 'package:Doctors_App/homePage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginNew extends StatefulWidget {
   @override
@@ -10,6 +11,33 @@ class LoginNew extends StatefulWidget {
 class _LoginNewState extends State<LoginNew> {
   final nameController = TextEditingController();
   final passwordController = TextEditingController();
+  bool showvalue = true;
+  SharedPreferences logindata;
+  bool newuser;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    ifLogin();
+  }
+
+  void ifLogin() async {
+    logindata = await SharedPreferences.getInstance();
+    newuser = (logindata.getBool('login') ?? true);
+    print(newuser);
+    if (newuser == false) {
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => HomePageDoctor()));
+    }
+  }
+
+  @override
+  void dispose() {
+    nameController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,19 +64,38 @@ class _LoginNewState extends State<LoginNew> {
           ),
           TextField(
             controller: nameController,
+            textAlign: TextAlign.center,
             decoration: InputDecoration(
-                contentPadding: EdgeInsets.all(5),
-                border: InputBorder.none,
-                hintText: "name@email.com"),
+              border: OutlineInputBorder(
+                  borderSide: new BorderSide(color: Colors.black)),
+              hintText: 'username',
+            ),
           ),
+          //  : Text('You are logged in as $name'),
           TextField(
+            textAlign: TextAlign.center,
             controller: passwordController,
             obscureText: true,
             decoration: InputDecoration(
               contentPadding: EdgeInsets.all(5),
-              border: InputBorder.none,
+              border: OutlineInputBorder(
+                  borderSide: new BorderSide(color: Colors.black)),
               hintText: "********",
             ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Checkbox(
+                value: this.showvalue,
+                onChanged: (bool value) {
+                  setState(() {
+                    this.showvalue = value;
+                  });
+                },
+              ),
+              Text('remember me'),
+            ],
           ),
           MaterialButton(
             minWidth: 350,
@@ -62,12 +109,16 @@ class _LoginNewState extends State<LoginNew> {
               "Login",
             ),
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => HomePageDoctor(),
-                ),
-              );
+              String username = nameController.text;
+              String password = passwordController.text;
+              if (username != '' && password != '') {
+                print('Successfull');
+                logindata.setBool('login', false);
+                logindata.setString('username', username);
+                logindata.setString('password', password);
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => HomePageDoctor()));
+              }
             },
           ),
           FlatButton(
@@ -109,7 +160,7 @@ class _LoginNewState extends State<LoginNew> {
             onPressed: () {},
           ),
           SizedBox(
-            height: 150,
+            height: 35,
           ),
           Positioned(
             bottom: 0,
